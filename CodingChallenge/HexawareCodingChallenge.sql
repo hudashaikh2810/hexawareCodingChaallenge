@@ -12,9 +12,9 @@ jobType enum ('FullTime','Part-time','Contract'),postedDate datetime);
 alter table jobs add foreign key(companyId) references companies(companyId);
 alter table jobs add primary key(jobId);
 alter table jobs modify column salary decimal(7,2);
-create table applicants(applicantId int primary key,firstname varchar(100),lastname varchar(100),emil varchar(255),phone varchar(20),
+create table applicants(applicantId int primary key,firstname varchar(100),lastname varchar(100),email varchar(255),phone varchar(20),
 resume text);
-alter table applicants rename column  emil to email;
+
 create table applications(applicationId int primary key,jobId int,applicantId int,applicationDate datetime,coverLetter text,
 foreign key (jobId) references jobs(jobId),foreign key(applicantId) references applicants(applicantId));
 /*insert values in tables*/
